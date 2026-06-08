@@ -55,21 +55,19 @@ sqa_automation/
 
 ---
 
-## Environment Variables (Credentials)
+## Environment Variables
 
-All sensitive and configurable values are stored in a **`.env`** file which is **excluded from version control** via `.gitignore`. A template file **`.env.example`** is provided with placeholder values.
+This project uses a `.env` file to keep credentials out of the source code. A template is included in the repo:
 
-| Variable             | Description                          | Placeholder Value              | Sensitive? |
-|----------------------|--------------------------------------|--------------------------------|:----------:|
-| `BASE_URL`           | Target web application URL           | `https://jobprtal.alarafafragrance.com` | No  |
-| `LOGIN_EMAIL`        | Email for login test account         | `your_email@example.com`       | ⚠️ **Yes** |
-| `LOGIN_PASSWORD`     | Password for login test account      | `your_password`                | ⚠️ **Yes** |
-| `BROWSER`            | Browser to use (chrome / firefox)    | `chrome`                       | No         |
-| `HEADLESS`           | Run in headless mode (true / false)  | `false`                        | No         |
-| `IMPLICIT_WAIT`      | Implicit wait timeout in seconds     | `10`                           | No         |
-| `PAGE_LOAD_TIMEOUT`  | Page load timeout in seconds         | `30`                           | No         |
+1. Copy `.env.example` to `.env`
+2. Open `.env` and replace the two placeholder values with your own test account credentials:
 
-> ⚠️ **Important:** Never commit the `.env` file. It contains real credentials. Only `.env.example` (with placeholders) is committed to the repository. Before running tests, copy `.env.example` to `.env` and replace the placeholder values with your actual test account credentials.
+```env
+LOGIN_EMAIL=your_email@example.com      ← replace with your registered email
+LOGIN_PASSWORD=your_password            ← replace with your account password
+```
+
+The rest of the values (`BASE_URL`, `BROWSER`, `HEADLESS`, etc.) work out of the box — only change them if needed.
 
 ---
 
